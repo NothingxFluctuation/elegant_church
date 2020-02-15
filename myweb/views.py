@@ -150,18 +150,30 @@ def all_songs(request):
     return render(request,'all_songs.html',{'songs':songs})
 
 
-
+@csrf_exempt
 @login_required
 def edit_profile(request):
     chrch = ChurchInformation.objects.get(regno=1172410)
     if request.method == 'POST':
-        chrch_form = RegistrationForm(instance=chrch, data=request.POST)
-        if chrch_form.is_valid():
-            chrch_form.save()
-            return HttpResponse("done")
-        else:
-            return HttpResponse("no")
-    return render(request,'church_data.html',{'church':church})
+        #print("Print me:",request.POST)
+        church_name = request.POST['church_name']
+        address = request.POST['address']
+        firstname = request.POST['firstname']
+        lastname = request.POST['lastname']
+        phone = request.POST['phone']
+        alternative_phone = request.POST['alternative_phone']
+        web = request.POST['web']
+        chrch.church_name = church_name
+        chrch.address = address
+        chrch.firstname = firstname
+        chrch.lastname = lastname
+        chrch.phone = phone
+        chrch.alternative_phone = alternative_phone
+        chrch.web = web
+        chrch.save()
+        return HttpResponse("done")
+    print("finally a get request")
+    return render(request,'church_data.html',{'church':chrch})
 
 
 

@@ -24,8 +24,9 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
     <!--[if lt IE 9]>
@@ -232,6 +233,7 @@
 
 function hideSuccess() {
     success.style.display = "none";
+    edit_success.style.display = "none";
 }
 
 
@@ -325,45 +327,6 @@ function HelpProfile() {
 </script> 
 
 
-<script>
-
-
-
-function HelpProfileData() {
-    $.ajax("{% url 'edit_profile' %}", {
-        type:'GET',
-        success: function(result) {
-            var element = document.getElementById("myTabContent");
-            element.empty();
-            element.innerHTML = result;
-        }
-    })
-}
-
-
-function HelpEdit() {
-    var ch_name = church_name.value;
-    var ad = address.value;
-    var f_name = firstname.value;
-    var l_nm = lastname.value;
-    var pn = phone.value;
-    var al_pn = alternative_phone.value;
-    var wb = web.value;
-
-    $.ajax("{% url 'edit_profile' %}", {
-        type="POST",
-        data: {church_name: ch_name, address: ad, firstname: f_name, lastname: l_nm, phone: pn, alternative_phone: al_pn, web:wb},
-        success: function(result) {
-            HelpProfileData();
-            return 1;
-        }
-    })
-}
-
-document.getElementById("edithelper").addEventListener("click", HelpEdit, false);
-
-
-</script>
 
 
 
@@ -497,6 +460,10 @@ document.getElementById("edithelper").addEventListener("click", HelpEdit, false)
                                     <button class="btn-primary" type="button" onclick="HelpNewSong();">Submit Song</button>
                                     <button class="btn-primary" type="button" onclick="HelpSubmissions();">Past Submissions</button>
                                     <br><br>
+                                    <div class="alert alert-success" id="edit_success" style="display: none;">
+                                        <strong>Success!</strong> profile successfully edited.
+                                    </div>
+                                    <br<br>
                           
                         </div>
                     </div>
@@ -708,6 +675,54 @@ document.getElementById("edithelper").addEventListener("click", HelpEdit, false)
     <script src="{% static 'js/wow.min.js' %}"></script>
     <!--Main-active-JS-->
     <script src="{% static 'js/main.js' %}"></script>
+	
+	
+	
+<script>
+
+
+
+function HelpProfileData() {
+    $.ajax("{% url 'edit_profile' %}", {
+        type:'GET',
+        success: function(result) {
+            var element = myTabContent;
+            element.innerHTML = '';
+            element.innerHTML = result;
+        }
+    })
+}
+
+
+function HelpEdit() {
+    var ch_name = church_name.value;
+    var ad = address.value;
+    var f_name = firstname.value;
+    var l_nm = lastname.value;
+    var pn = phone.value;
+    var al_pn = alternative_phone.value;
+    var wb = web.value;
+    $.ajax("{% url 'edit_profile' %}", {
+        type: "POST",
+        data: {church_name: ch_name, address: ad, firstname: f_name, lastname: l_nm, phone: pn, alternative_phone: al_pn, web:wb},
+        success: function(result) {
+           
+            $('#myModal').modal('hide');
+            edit_success.style.display = "block";
+            setTimeout(hideSuccess, 5000)
+            HelpProfileData();
+        }
+    })
+}
+
+
+
+</script>
+	
+	
+	
+	
+	
 </body>
 
 </html>
