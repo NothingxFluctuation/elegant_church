@@ -1,0 +1,504 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Church Site</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="shortcut icon" type="image/ico" href="{% static 'images/favicon.ico' %}" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        
+<script>
+function SubmitRegnoForm() {
+    document.getElementById("mc-form").submit();
+}
+
+</script>
+
+<style>
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-login {
+		width: 320px;
+	}
+	.modal-login .modal-content {
+		border-radius: 1px;
+		border: none;
+	}
+	.modal-login .modal-header {
+        position: relative;
+		justify-content: center;
+        background: #f2f2f2;
+	}
+    .modal-login .modal-body {
+        padding: 30px;
+    }
+    .modal-login .modal-footer {
+        background: #f2f2f2;
+    }
+	.modal-login h4 {
+		text-align: center;
+		font-size: 26px;
+	}
+    .modal-login label {
+        font-weight: normal;
+        font-size: 13px;
+    }
+	.modal-login .form-control, .modal-login .btn {
+		min-height: 38px;
+		border-radius: 2px; 
+	}
+	.modal-login .hint-text {
+		text-align: center;
+	}
+	.modal-login .close {
+        position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+    .modal-login .checkbox-inline {
+        margin-top: 12px;
+    }
+    .modal-login input[type="checkbox"]{
+        margin-top: 2px;
+    }
+	.modal-login .btn {
+        min-width: 100px;
+		background: #3498db;
+		border: none;
+		line-height: normal;
+	}
+	.modal-login .btn:hover, .modal-login .btn:focus {
+		background: #248bd0;
+	}
+	.modal-login .hint-text a {
+		color: #999;
+	}
+	.trigger-btn {
+		display: inline-block;
+		margin: 100px auto;
+	}
+
+
+</style>
+
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-content -->
+    <div class="preloader">
+        <span><i class="lnr lnr-sun"></i></span>
+    </div>
+    <!-- MainMenu-Area -->
+    <nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="{% static 'images/output-onlinepngtools.png' %}" alt="Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="primary_menu">
+                <ul class="nav navbar-nav mainmenu">
+                    <li class="active"><a href="#home_page">Home</a></li>
+                    <li><a href="#about_page">About</a></li>
+                    <li><a href="#price_page">Pricing</a></li>
+                    <li><a href="#contact_page">Contacts</a></li>
+                </ul>
+                <div class="right-button hidden-xs">
+                    <a href="#choddia">Sign Up</a>
+                    <a href="#myModal" data-toggle="modal">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- MainMenu-Area-End -->
+<!-- Home-Area -->
+<header class="home-area overlay" id="home_page">
+    <div class="container">
+        <div class="row" style="align-items: center; justify-content: space-around; display: flex; align-content: center;">
+            <div class="col-xs-12 col-md-7">
+                <div class="space-50 hidden-xs"></div>
+                <h1 class="wow fadeInUp" data-wow-delay="0.4s" style="text-align: center;">Lorem Ipsum</h1>
+                <div class="space-20"></div>
+                <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                </div>
+                <div class="space-20"></div>
+                <div class="text-center"> 
+                <a href="#choddia" class="bttn-white wow fadeInUp data-wow-delay="0.8s">Register with us</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</header>
+<!-- Home-Area-End -->
+
+    <!-- About-Area -->
+    <section class="section-padding" id="about_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="page-title text-center">
+                        <img src="{% static 'images/abt.png' %}" alt="About Logo">
+                        <div class="space-20"></div>
+                        <h5 class="title">About Our mission</h5>
+                        <div class="space-30"></div>
+                        <h3 class="blue-color">We provide service for consectetur adipisicing elit, sed do eiusmod tempor incididunt ut mollit anim id est laborum. Sedut perspiciatis unde omnis. </h3>
+                        <div class="space-20"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About-Area-End -->
+    <!-- Video-Area -->
+    <section class="video-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="video-photo">
+                        <img src="{% static 'images/church.jpg' %}" alt="">
+                        <a href="https://www.youtube.com/watch?v=ScrDhTsX0EQ" class="popup video-button">
+                            <img src="{% static 'images/play-button.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-5 col-md-offset-1">
+                    <div class="space-60 hidden visible-xs"></div>
+                    <div class="page-title">
+                        <h5 class="title wow fadeInUp" data-wow-delay="0.2s">FEATURED VIDEO</h5>
+                        <div class="space-10"></div>
+                        <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Learn About Our Work</h3>
+                        <div class="space-20"></div>
+                        <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                        </div>
+                        <div class="space-50"></div>
+                        <a href="#contact_page" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Video-Area-End -->
+
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <form action="{% url 'login' %}" method="GET">
+                    <div class="modal-header">				
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">				
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <div class="clearfix">
+                                <label>Password</label>
+                                <a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
+                            </div>
+                            
+                            <input type="password" name="password" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary pull-right" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>     
+
+    <!--Price-Area -->
+    <section class="section-padding price-area" id="price_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title text-center">
+                        <h5 class="title">Pricing Plan</h5>
+                        <h3 class="dark-color">Our Awesome Pricing Plan</h3>
+                        <div class="space-60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-diamond"></span>
+                            </div>
+                            <h4 class="upper">LICENSE A</h4>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li>Income under £100,000/annum</li>
+                                <li>Monthly fee £100</li>
+                                <li>Annual fee £1,000</li>
+                            </ul>
+                        </div>
+                        <div class="price-rate">
+                            <sup>£</sup> <span class="rate">100</span> <small>/Month</small>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#choddia" class="bttn-white">Purchase</a>
+                        </div>
+                    </div>
+                    <div class="space-30 hidden visible-xs"></div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-diamond"></span>
+                            </div>
+                            <h4 class="upper">LICENSE B</h4>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li>Income £100,000-£500,000/annum</li>
+                                <li>Monthly fee £275</li>
+                                <li>Annual fee £3,300</li>
+                            </ul>
+                        </div>
+                        <div class="price-rate">
+                            <sup>£</sup> <span class="rate">275</span> <small>/Month</small>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#choddia" class="bttn-white">Purchase</a>
+                        </div>
+                    </div>
+                    <div class="space-30 hidden visible-xs"></div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-diamond"></span>
+                            </div>
+                            <h4 class="upper">LICENSE C</h4>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li>Income £500,001-£1,000,000/annum</li>
+                                <li>Monthly fee £350</li>
+                                <li>Annual fee £4,200</li>
+                            </ul>
+                        </div>
+                        <div class="price-rate">
+                            <sup>£</sup> <span class="rate">350</span> <small>/Month</small>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#choddia" class="bttn-white">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-diamond"></span>
+                            </div>
+                            <h4 class="upper">LICENSE D</h4>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li>Income $1,000,001-£10,000,000/annum</li>
+                                <li>Monthly fee £750</li>
+                                <li>Annual fee £9000</li>
+                            </ul>
+                        </div>
+                        <div class="price-rate">
+                            <sup>£</sup> <span class="rate">750</span> <small>/Month</small>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#choddia" class="bttn-white">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-diamond"></span>
+                            </div>
+                            <h4 class="upper">LICENSE E</h4>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li>Income more than £10,000,000 per annum</li>
+                                <li>Monthly fee £1,500</li>
+                                <li>Annual fee £18,000</li>
+                            </ul>
+                        </div>
+                        <div class="price-rate">
+                            <sup>£</sup> <span class="rate">1,500</span> <small>/Month</small>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#choddia" class="bttn-white">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+           
+
+
+
+            </div>
+        </div>
+    </section>
+    <!--Price-Area-End -->
+    <!-- Subscribe-Form -->
+    <div class="subscribe-area section-padding" id="choddia" style="height: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    <div class="subscribe-form text-center">
+                        <h3 class="blue-color">Enter Your Church Registration Number</h3>
+                        <div class="space-20"></div>
+                        <form id="mc-form" action="{% url 'get_regno' %}" method="GET">
+                            <input type="number" class="control" placeholder="Registration Number. . ." required="required" name="rgno" id="mc-email">
+                            <button class="bttn-white active" type="submit" onclick="SubmitRegnoForm();"> Continue</button>
+                            <label class="mt10" for="mc-email"></label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe-Form-Area -->
+    <!-- Footer-Area -->
+    <footer class="footer-area" id="contact_page">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="page-title text-center">
+                            <h5 class="title">Contact US</h5>
+                            <h3 class="dark-color">Get To Us By Following Details</h3>
+                            <div class="space-60"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-map-marker"></span>
+                            </div>
+                            <p>8-54 Paya Lebar Square <br /> 60 Paya Lebar Roa SG, Singapore</p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-phone-handset"></span>
+                            </div>
+                            <p>+65 93901336 <br /> +65 93901337</p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-envelope"></span>
+                            </div>
+                            <p>yourmail@gmail.com <br /> backpiper.com@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                    <span>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-7">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#home_page">Home</a></li>
+                                <li><a href="#about_page">About</a></li>
+                                <li><a href="#price_page">Pricing</a></li>
+                                <li><a href="#about_page">Video</a></li>
+                                <li><a href="#contact_page">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom-End -->
+    </footer>
+    <!-- Footer-Area-End -->
+    <!--Vendor-JS-->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!--Plugin-JS-->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/contact-form.js' %}"></script>
+    <script src="{% static 'js/ajaxchimp.js' %}"></script>
+    <script src="{% static 'js/scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!--Main-active-JS-->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

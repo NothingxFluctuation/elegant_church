@@ -1,0 +1,711 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Church</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+
+}
+
+
+
+.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+</style>
+<style>
+ .modal { 
+  top: 130px;
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-login {
+		width: 320px;
+	}
+	.modal-login .modal-content {
+		border-radius: 1px;
+		border: none;
+	}
+	.modal-login .modal-header {
+        position: relative;
+		justify-content: center;
+        background: #f2f2f2;
+	}
+    .modal-login .modal-body {
+        padding: 30px;
+    }
+    .modal-login .modal-footer {
+        background: #f2f2f2;
+    }
+	.modal-login h4 {
+		text-align: center;
+		font-size: 26px;
+	}
+    .modal-login label {
+        font-weight: normal;
+        font-size: 13px;
+    }
+	.modal-login .form-control, .modal-login .btn {
+		min-height: 38px;
+		border-radius: 2px; 
+	}
+	.modal-login .hint-text {
+		text-align: center;
+	}
+	.modal-login .close {
+        position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+    .modal-login .checkbox-inline {
+        margin-top: 12px;
+    }
+    .modal-login input[type="checkbox"]{
+        margin-top: 2px;
+    }
+	.modal-login .btn {
+        min-width: 100px;
+		background: #3498db;
+		border: none;
+		line-height: normal;
+	}
+	.modal-login .btn:hover, .modal-login .btn:focus {
+		background: #248bd0;
+	}
+	.modal-login .hint-text a {
+		color: #999;
+	}
+	.trigger-btn {
+		display: inline-block;
+		margin: 100px auto;
+	}
+
+
+</style>
+
+<script>
+
+function hideSuccess() {
+    success.style.display = "none";
+}
+
+
+
+
+function showSuccess(th) {
+    // event.preventDefault();
+    // var $form = $( th ),
+    // url = $form.attr('action');
+    // var posting = $.post( url, { date_for: $('#date_for').val(), song_artist: $('#song_artist').val(), song_title: $('#song_title').val(), youtube_link: $('#youtube_link'), itunes_link: $('itunes_link'), spotify_link: $('spotify_link') } );
+    // posting.done(function( data ) {
+    //     alert('success');
+    // }); 
+    // $('#formoid').ajaxForm(function(response) {
+    //     alert(response);
+    // });
+
+	
+	
+
+    var d_for = date_for.value;
+    var song_a = song_artist.value;
+    var song_t = song_title.value;
+    var yout = youtube_link.value;
+    var itunes = itunes_link.value;
+    var spot = spotify_link.value;
+    $.ajax("{% url 'new_song' %}", {
+      type: 'POST',
+      data: {date_for: d_for, song_artist: song_a, song_title: song_t, youtube_link: yout, itunes_link: itunes, spotify_link: spot},
+      success: function(result) {
+        if (result == "done") {
+            success.style.display = "block";
+            setTimeout(hideSuccess, 5000)
+        } else {
+            $('#kampachees').modal('show');
+        }
+      }
+    }
+    );
+    
+    song_artist.value = song_artist.defaultValue;
+    song_title.value = song_title.defaultValue;
+    youtube_link.value = youtube_link.defaultValue;
+    itunes_link.value = itunes_link.defaultValue;
+    spotify_link.value = spotify_link.defaultValue;
+}
+
+
+
+function HelpNewSong() {
+    myprofile.style.display = "none";
+    comments.style.display = "none";
+    new_song.style.display = "block";
+    liNew.className = "active";
+    liProfile.className = "";
+    liSubmission.className = "";
+
+    window.scrollTo(0,0)
+}
+
+
+function HelpSubmissions() {
+    $.ajax("{% url 'get_test' %}", {
+        type:'GET',
+        success: function(result) {
+            var element = document.getElementById("comments");
+            element.innerHTML = result;
+            comments.style.display = "block";
+        }
+    });
+
+    myprofile.style.display = "none";
+    comments.style.display = "block";
+    new_song.style.display = "none";
+    liNew.className = "";
+    liProfile.className = "";
+    liSubmission.className = "active";
+}
+
+function HelpProfile() {
+    myprofile.style.display = "block";
+    comments.style.display = "none";
+    new_song.style.display = "none";
+    liNew.className = "";
+    liProfile.className = "active";
+    liSubmission.className = "";
+}
+
+
+
+</script> 
+
+
+<script>
+
+
+function HelpProfileData() {
+    $.ajax("{% url 'edit_profile' %}", {
+        type:'GET',
+        success: function(result) {
+            var element = document.getElementById("myTabContent");
+            element.empty();
+            element.innerHTML = result;
+        }
+    })
+}
+
+
+function HelpEdit() {
+    var ch_name = church_name.value;
+    var ad = address.value;
+    var f_name = firstname.value;
+    var l_nm = lastname.value;
+    var pn = phone.value;
+    var al_pn = alternative_phone.value;
+    var wb = web.value;
+
+    $.ajax("{% url 'edit_profile' %}", {
+        type="POST",
+        data: {church_name: ch_name, address: ad, firstname: f_name, lastname: l_nm, phone: pn, alternative_phone: al_pn, web:wb},
+        success: function(result) {
+            HelpProfileData();
+            return 1;
+        }
+    })
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+</head>
+
+<body class="single-post">
+    <!-- Preloader-content -->
+    <div class="preloader">
+        <span><i class="lnr lnr-sun"></i></span>
+    </div>
+    <!-- MainMenu-Area -->
+    <nav class="mainmenu-area affix">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="{% static 'images/output-onlinepngtools.png' %}" alt="Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="primary_menu">
+                <ul class="nav navbar-nav mainmenu">
+                    <li class="active" id="liProfile"><a href="#" onclick="HelpProfile();">Profile</a></li>
+                    <li id="liNew"><a href="#" onclick="HelpNewSong();">Submit Song</a></li>
+                    <li id="liSubmission"><a href="#" onclick="HelpSubmissions();">Submissions</a></li>
+                </ul>
+                <div class="right-button hidden-xs">
+                    <a href="{% url 'logout' %}" data-toggle="modal">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- MainMenu-Area-End -->
+    <div class="modal" style="text-align: center; padding: 0;" id="kampachees" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="display: inline-block; text-align: left; vertical-align: middle;" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="khikhikhi" style="text-align: center; font-weight: 600; color:#495057; font-size: large;">Invalid Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="shishishi">Please fill the form properly before clicking submit.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+	  
+	     <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+   			     <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <form action="#" method="POST">
+                    <div class="modal-header">				
+                        <h4 class="modal-title">Edit Information</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">				
+                        <div class="form-group">
+                            <label>Name of Church</label>
+                            <input type="text" name="church_name" id="church_name" class="form-control" required="required" {% if church.church_name %} value="{{church.church_name}}" {% endif %} >
+                        </div>
+                        <div class="form-group">
+                            <div class="clearfix">
+                                <label>Address</label>
+                            </div>
+                            
+                            <input type="text" name="address" id="address" {% if church.address %} value="{{church.address}}" {% endif %} class="form-control" required="required">
+                        </div>
+						<div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="firstname" id="firstname" {% if church.firstname %} value="{{church.firstname}}" {% endif %} class="form-control" required="required">
+                        </div>
+						<div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" id="lastname" {% if church.lastname %} value="{{church.lastname}}" {% endif %} class="form-control" required="required">
+                        </div>
+						<div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" name="phone" id="phone" {% if church.phone %} value="{{church.phone}}" {% endif %} class="form-control" required="required">
+                        </div>
+						<div class="form-group">
+                            <label>Alternative Phone</label>
+                            <input type="text" name="alternative_phone" id="alternative_phone" {% if church.alternative_phone %} value="{{church.alternative_phone}}" {% endif %} class="form-control" required="required">
+                        </div>
+						<div class="form-group">
+                            <label>Web</label>
+                            <input type="text" name="web" id="web" {% if church.web %} value="{{church.web}}" {% endif %} class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" onclick="HelpProfileData();" class="btn btn-primary pull-right" value="Edit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+	  
+<br><br>
+
+<div class="container emp-profile" id="myprofile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{% static 'images/church.jpg' %}" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{church.church_name}}
+                                    </h5>
+                                    <h6>
+                                        {{church.email}}
+                                    </h6>
+                                    <p class="proile-rating">Date Joined : <span>8th Feb 2020</span></p>
+                                    <button class="btn-primary" type="button" onclick="HelpNewSong();">Submit Song</button>
+                                    <button class="btn-primary" type="button" onclick="HelpSubmissions();">Past Submissions</button>
+                                    <br><br>
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="button" href="#myModal" data-toggle="modal" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>ONLINE LINKS</p>
+
+                            <a href="{{church.web}}">Website Link</a><br/>
+                            
+                            <p>&nbsp;&nbsp;</p>
+                            <a href="">&nbsp;</a><br/>
+                            <a href="">&nbsp;</a><br/>
+                            <a href="">&nbsp;</a><br/>
+                            <a href="">&nbsp;</a><br/>
+                            <a href="">&nbsp;</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 5%;">
+                            <li class="nav-item active">
+                              <a class="nav-link active" style="font-weight: 600;" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" style="font-weight: 600;" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <br>
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">Church Site ID</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.id}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">Name of Church</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.church_name}}</p>
+                                    </div>
+                                </div>
+								<div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">Address</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.address}}</p>
+                                    </div>
+                                </div>
+								<div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">Phone Number</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.phone}}</p>
+                                    </div>
+                                </div>
+								<div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">Alternative Phone Number</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.alternative_phone}}</p>
+                                    </div>
+                                </div>
+								<div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">License Type</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.license_type}}</p>
+                                    </div>
+                                </div>
+								
+
+
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">First Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.firstname}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-weight: 600; color: black;">Last Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: 600; color: #0062cc;">{{church.lastname}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+        <div class="container">
+            <div class="row" id="new_song" style="display: none;">
+                <br><br>
+                <div class="col-xs-12">
+                    <div class="alert alert-success" id="success" style="display: none;">
+                        <strong>Success!</strong> Song is submitted.
+                    </div>
+                        <div class="comment-respond">
+                            <h4>Song Submission Form</h4>
+                            <form id="formoid" action="{% url 'new_song' %}" method="POST" class="comment-form">
+                              
+                                <input type="date" class="form-control" placeholder="Date For" name="date_for" id="date_for" value="02/12/2020">
+                                <div class="space-30"></div>
+                                <div class="form-double">
+                                    <div class="box">
+                                        <input type="text" class="form-control" placeholder="Song Artist" name="song_artist" id="song_artist">
+                                        <div class="space-30"></div>
+                                    </div>
+                                    <div class="box last">
+                                        <input type="text" class="form-control" placeholder="Song Title" name="song_title" id="song_title">
+                                        <div class="space-30"></div>
+                                    </div>
+                                </div>
+                                <div class="form-double">
+                                    <div class="box">
+                                        <input type="text" class="form-control" placeholder="YouTube Link" name="youtube_link" id="youtube_link">
+                                        <div class="space-30"></div>
+                                    </div>
+                                    <div class="box last">
+                                        <input type="text" class="form-control" placeholder="Itunes Link" name="itunes_link" id="itunes_link">
+                                        <div class="space-30"></div>
+                                    </div>
+                                </div>
+                              
+                                <input type="text" class="form-control" placeholder="Spotify Link" name="spotify_link" id="spotify_link">
+                                <div class="space-30"></div>
+                                <button type="button" class="bttn-default" onclick="showSuccess(this);">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<br><br>
+            <div id="comments" class="comments-area" style="display:none;">
+            
+                
+            </div>
+
+</div>
+
+
+            <br><br>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer-Bootom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                    <span>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-7">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="index.html#home_page">Home</a></li>
+                                <li><a href="index.html#about_page">About</a></li>
+                                <li><a href="index.html#price_page">Pricing</a></li>
+                                <li><a href="index.html#questions_page">Video</a></li>
+                                <li><a href="index.html#contact_page">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom-End -->
+    </footer>
+    <!-- Footer-Area-End -->
+    <!--Vendor-JS-->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!--Plugin-JS-->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/contact-form.js' %}"></script>
+    <script src="{% static 'js/ajaxchimp.js' %}"></script>
+    <script src="{% static 'js/scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!--Main-active-JS-->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+
+<ul class="comments-list">
+    <li><h3 class="comment-heading">{{songs.count}} songs submitted</h3></li>
+    {% for song in songs %}
+    <li>
+        <article class="comment">
+            <figure class="comment-pic">
+                <img alt="" src="{% static 'images/church.jpg' %}">
+            </figure>
+            <div class="comment-content">
+                <div class="comment-header">
+                    <h4>{{song.song_title}} by {{song.song_artist}}</h4>
+                    <p class="comment-date">Dated for: {{song.date_for}}</p>
+                </div>
+                <p>Created on: {{song.created}}</p>
+                <ul class="breadcrumb">
+                    {% if song.youtube_link %}
+                    <li><a href="{{song.youtube_link}}">YouTube Link</a></li>
+                    {% endif %}
+
+                    {% if song.itunes_link %}
+                    <li><a href="{{song.itunes_link}}">Itunes Link</a></li>
+                    {% endif %}
+
+                    {% if song.spotify_link %}
+                    <li><a href="{{song.spotify_link}}">Spotify Link</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </div>
+        </article>
+    </li>
+    {% endfor %}
+</ul>

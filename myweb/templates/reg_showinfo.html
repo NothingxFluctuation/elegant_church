@@ -1,0 +1,163 @@
+{% load bootstrap %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Cappuchino</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'modern-business.css' %}" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -50px;
+}
+
+.footer, .push {
+  height: 50px; /* .push must be the same height as .footer */
+}
+
+</style>
+
+
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Cappuchino</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'start' %}">Register</a>
+          </li>
+          {% endif %}
+
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <br>
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="alert alert-success" role="alert">
+{% else %}
+<div class="alert alert-danger" role="alert">
+{% endif %}
+  {{message}}
+
+</div>
+<br>
+{% endfor %}
+{% endif %}
+    <!-- Page Heading/Breadcrumbs -->
+ <br>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Show Info</li>
+    </ol>
+
+    <!-- Intro Content -->
+        <div class="row">
+  
+      <br>
+      <br>
+      <div>
+        <p>Church Info:</p>
+        <form action="." method="POST">
+            {% csrf_token %}
+
+            {{r_form|bootstrap}}
+          
+            <div class="form-group">
+    
+        
+              <label class="control-label  " for="id_password">Password</label>
+          
+  
+          <div class=" ">
+              <input type="password" name="password" maxlength="150" class=" form-control" required id="id_password">
+  
+              
+  
+              
+          </div>
+      
+  </div>
+        <input type="submit" />
+
+        </form>
+     
+        <br>
+
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+</div>
+  <!-- /.container -->
+<div class="push">
+</div>
+
+
+<div class="footer">
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Cappuchino &copy;</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+  <!-- Footer -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>
