@@ -328,6 +328,7 @@ function HelpProfile() {
 <script>
 
 
+
 function HelpProfileData() {
     $.ajax("{% url 'edit_profile' %}", {
         type:'GET',
@@ -359,6 +360,7 @@ function HelpEdit() {
     })
 }
 
+document.getElementById("edithelper").addEventListener("click", HelpEdit, false);
 
 
 </script>
@@ -421,11 +423,11 @@ function HelpEdit() {
 	  
 	     <!-- Modal HTML -->
     <div id="myModal" class="modal fade">
-   			     <div class="modal-dialog modal-login">
+   			     <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form action="#" method="POST">
                     <div class="modal-header">				
-                        <h4 class="modal-title">Edit Information</h4>
+                        <h4 class="modal-title" style="text-align: center; font-weight: 1000;"><b>Edit Information</b></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">				
@@ -461,8 +463,8 @@ function HelpEdit() {
                             <input type="text" name="web" id="web" {% if church.web %} value="{{church.web}}" {% endif %} class="form-control" required="required">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="button" onclick="HelpProfileData();" class="btn btn-primary pull-right" value="Edit">
+                    <div class="modal-footer" style="text-align:center; align-items: center;">
+                        <input type="button" onclick="HelpEdit();" id="edithelper" class="btn btn-primary" value="&nbsp;&nbsp;Edit&nbsp;&nbsp;" style="text-align:center; align-items: center; font-weight: 700;">
                     </div>
                 </form>
             </div>
