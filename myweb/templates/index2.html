@@ -119,6 +119,21 @@ function SubmitRegnoForm() {
 
 </style>
 
+<script>
+    function forgotPass() {
+        idlogin.style.display = "none";
+        idforgot.style.display = "block";
+    }
+
+    function loginme() {
+        idforgot.style.display = "none";
+        idlogin.style.display = "block";
+    }
+</script>
+
+
+
+
 </head>
 
 <body data-spy="scroll" data-target=".mainmenu-area">
@@ -233,7 +248,24 @@ function SubmitRegnoForm() {
     <div id="myModal" class="modal fade">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
-                <form action="{% url 'login' %}" method="GET">
+                <form action="#" id="idforgot" style="display: none;">
+                    <div class="modal-header">				
+                        <h4 class="modal-title">Forgot Password</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">				
+                        <div class="form-group">
+                            <label>Please provide email you register with:</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                            <a href="#" class="pull-right text-muted" style="font-weight: 500;" onclick="loginme();"><small>Login</small></a>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer" style="text-align: center;">
+                        <input type="submit" class="btn btn-primary" value="Send Activitation Link">
+                    </div>
+                </form>
+                <form action="{% url 'login' %}" method="GET" id="idlogin">
                     <div class="modal-header">				
                         <h4 class="modal-title">Login</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -246,14 +278,14 @@ function SubmitRegnoForm() {
                         <div class="form-group">
                             <div class="clearfix">
                                 <label>Password</label>
-                                <a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
+                                <a href="#" class="pull-right text-muted" style="font-weight: 500;" onclick="forgotPass();"><small>Forgot?</small></a>
                             </div>
                             
                             <input type="password" name="password" class="form-control" required="required">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary pull-right" value="Login">
+                    <div class="modal-footer" style="text-align: center;">
+                        <input type="submit" class="btn btn-primary" value="Login">
                     </div>
                 </form>
             </div>
